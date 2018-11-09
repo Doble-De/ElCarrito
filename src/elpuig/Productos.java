@@ -1,4 +1,9 @@
 package elpuig;
 
-public class Productos {
+public abstract class Productos {
+
+    double preu;
+    String nom;
+    int codi_barres;
+
 }

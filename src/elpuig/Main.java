@@ -9,11 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Alimentación> alimentacións = new ArrayList<>();
-        List<Textil> textils = new ArrayList<>();
-        List<Electronica> electronics = new ArrayList<>();
-
         MenuWidget menu = new MenuWidget();
+        Gestor gestor = new Gestor();
         boolean exit = true;
 
         while (exit) {
@@ -38,7 +35,8 @@ public class Main {
                                 //Alimentacion
                                 break;
                             case 2:
-                                //Textil
+                                gestor.intoducirtextil();
+                                gestor.mostrar();
                                 break;
                             case 3:
                                 //Electronica
