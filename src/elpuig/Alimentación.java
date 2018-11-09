@@ -9,9 +9,11 @@ import java.util.Scanner;
 public class Alimentación extends Productos {
 
     private LocalDate Data;
+
     private int dia;
     private int mes;
     private int año;
+
 
     public int getDia() {
         return dia;
@@ -47,15 +49,22 @@ public class Alimentación extends Productos {
     }
 
 
-    public Period getFechaActual(){
-        LocalDate startDateInclusive = LocalDate.now ();
-        LocalDate lastDateInclusive = LocalDate.of(getAño(),getMes(),getDia());
+    public Period getDiasRestantes() {
+        LocalDate startDateInclusive = LocalDate.now();
+        LocalDate lastDateInclusive = LocalDate.of(getAño(), getMes(), getDia());
 
-        Period periodo =Period.between(startDateInclusive,lastDateInclusive);
+        Period periodo = Period.between(startDateInclusive, lastDateInclusive);
         periodo.getYears();
         periodo.getMonths();
         periodo.getDays();
         return periodo;
     }
 
-}
+        public void PrecioFinalA(Period periodo){
+
+            setPreu(getPreu() - getPreu() * (1 / (periodo.getDays() + 1)) + (getPreu() * 0.1));
+
+        }
+
+    }
+

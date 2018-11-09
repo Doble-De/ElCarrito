@@ -35,4 +35,9 @@ public class Electronica extends Productos{
     public void setcodi(int codi) {
         this.codi_barres = codi;
     }
+
+    public void PrecioFinalE(){
+
+        setpreu(getpreu()+getpreu()*(getDiesGarantia()/365)*0.1);
+    }
 }
