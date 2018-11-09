@@ -36,7 +36,6 @@ public class Main {
                                 break;
                             case 2:
                                 gestor.intoducirtextil();
-                                gestor.mostrar();
                                 break;
                             case 3:
                                 //Electronica
