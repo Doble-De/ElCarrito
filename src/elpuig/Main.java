@@ -1,5 +1,6 @@
 package elpuig;
-import com.company.Widgets.MenuWidget;
+
+import elpuig.Widgets.MenuWidget;
 
 import java.util.ArrayList;
 import java.util.List;
