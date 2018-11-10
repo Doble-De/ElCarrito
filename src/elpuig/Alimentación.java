@@ -39,13 +39,36 @@ public class Alimentación extends Productos {
         this.año = año;
     }
 
-
     public LocalDate getData() {
         return Data;
     }
 
     public void setData(LocalDate data) {
         Data = data;
+    }
+
+    public String getnom() {
+        return nom;
+    }
+
+    public void setnom(String nom) {
+        this.nom = nom;
+    }
+
+    public double getpreu() {
+        return preu;
+    }
+
+    public void setpreu(double preu) {
+        this.preu = preu;
+    }
+
+    public int getcodi() {
+        return codi_barres;
+    }
+
+    public void setcodi(int codi) {
+        this.codi_barres = codi;
     }
 
 
@@ -60,9 +83,11 @@ public class Alimentación extends Productos {
         return periodo;
     }
 
-        public void PrecioFinalA(Period periodo){
+        public double PrecioFinalA(Period periodo){
 
-            setPreu(getPreu() - getPreu() * (1 / (periodo.getDays() + 1)) + (getPreu() * 0.1));
+            double preciofinal = getpreu() - getpreu() * (1 / (periodo.getDays() + 1)) + (getpreu() * 0.1);
+
+            return preciofinal;
 
         }
 

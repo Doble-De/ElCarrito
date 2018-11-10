@@ -38,11 +38,34 @@ public class Gestor {
         System.out.println("Introduce el precio");
         electronica.setpreu(scanner.nextDouble());
         scanner.nextLine();
-        System.out.println("Introduce la composición");
+        System.out.println("Introduce los dias de garantia");
         electronica.setDiesGarantia(scanner.nextInt());
+        electronica.setpreu(electronica.PrecioFinalE());
         System.out.println("Introduce el codigo de barras");
         electronica.setcodi(scanner.nextInt());
         scanner.nextLine();
         electronics.add(electronica);
+    }
+
+    public void insertarAlimentacion(){
+        System.out.println("Introduce el nombre");
+        alimentación.setnom(scanner.nextLine());
+        System.out.println("Introduce el precio");
+        alimentación.setpreu(scanner.nextDouble());
+        scanner.nextLine();
+        System.out.println("Introduce el año de caducidad");
+        alimentación.setAño(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Introduce el mes de caducidad");
+        alimentación.setMes(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Introduce el dia de caducidad");
+        alimentación.setDia(scanner.nextInt());
+        scanner.nextLine();
+        alimentación.setpreu(alimentación.PrecioFinalA(alimentación.getDiasRestantes()));
+        System.out.println("Introduce el codigo de barras");
+        alimentación.setcodi(scanner.nextInt());
+        scanner.nextLine();
+        alimentacións.add(alimentación);
     }
 }

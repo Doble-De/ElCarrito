@@ -32,13 +32,13 @@ public class Main {
                                 System.out.println("Volviendo al menú anterior");
                                 break;
                             case 1:
-                                //Alimentacion
+                                gestor.insertarAlimentacion();
                                 break;
                             case 2:
                                 gestor.intoducirtextil();
                                 break;
                             case 3:
-                                //Electronica
+                                gestor.intoducirElectronica();
                                 break;
                         }
                     }

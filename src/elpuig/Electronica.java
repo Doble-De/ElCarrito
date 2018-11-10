@@ -4,7 +4,7 @@ public class Electronica extends Productos{
 
     int diesGarantia;
 
-    public int getDiesGarantia() {
+    public double getDiesGarantia() {
         return diesGarantia;
     }
 
@@ -36,8 +36,10 @@ public class Electronica extends Productos{
         this.codi_barres = codi;
     }
 
-    public void PrecioFinalE(){
+    public double PrecioFinalE(){
 
-        setpreu(getpreu()+getpreu()*(getDiesGarantia()/365)*0.1);
+        double preciofinal = getpreu()+getpreu()*(getDiesGarantia()/365)*0.1;
+
+        return preciofinal;
     }
 }
