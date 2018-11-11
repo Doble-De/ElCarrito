@@ -158,7 +158,6 @@ public class Gestor {
         }
 
 
-
         for (int i = 0; i <carros.size() ; i++) {
             System.out.println(carros.get(i).nom);
             System.out.println(carros.get(i).codi_barres);
