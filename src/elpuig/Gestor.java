@@ -83,9 +83,8 @@ public class Gestor {
             if (!primero) {
                 boolean existe = false;
                 for (int j = 0; j <carros.size(); j++) {
-                    System.out.println(carros.get(i).nom);
-                    if (carros.get(i).nom.equals(tx.nom)){
-                        carros.get(i).total ++;
+                    if (carros.get(j).nom.equals(tx.nom) && carros.get(j).codi_barres == tx.codi_barres){
+                        carros.get(j).total ++;
                         existe = true;
                     }
                 }
@@ -102,18 +101,62 @@ public class Gestor {
             }
 
         }
+
+        primero = true;
         for (int i = 0; i <alimentacións.size() ; i++) {
             Carro al = new Carro();
-            al.nom = textils.get(i).nom;
-            al.codi_barres = textils.get(i).codi_barres;
-            carros.add(al);
+            al.nom = alimentacións.get(i).nom;
+            al.codi_barres = alimentacións.get(i).codi_barres;
+            if (!primero) {
+                boolean existe = false;
+                for (int j = 0; j <carros.size(); j++) {
+                    if (carros.get(j).nom.equals(al.nom) && carros.get(j).codi_barres == al.codi_barres){
+                        carros.get(j).total ++;
+                        existe = true;
+                    }
+                }
+                if (!existe){
+                    al.total ++;
+                    carros.add(al);
+                }
+
+            }
+            else{
+                al.total ++;
+                carros.add(al);
+                primero = false;
+            }
+
         }
+
+
+        primero = true;
         for (int i = 0; i <electronics.size() ; i++) {
             Carro el = new Carro();
-            el.nom = textils.get(i).nom;
-            el.codi_barres = textils.get(i).codi_barres;
-            carros.add(el);
+            el.nom = electronics.get(i).nom;
+            el.codi_barres = electronics.get(i).codi_barres;
+            if (!primero) {
+                boolean existe = false;
+                for (int j = 0; j <carros.size(); j++) {
+                    if (carros.get(j).nom.equals(el.nom) && carros.get(j).codi_barres == el.codi_barres){
+                        carros.get(j).total ++;
+                        existe = true;
+                    }
+                }
+                if (!existe){
+                    el.total ++;
+                    carros.add(el);
+                }
+
+            }
+            else{
+                el.total ++;
+                carros.add(el);
+                primero = false;
+            }
+
         }
+
 
 
         for (int i = 0; i <carros.size() ; i++) {
