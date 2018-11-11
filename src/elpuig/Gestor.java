@@ -10,14 +10,15 @@ public class Gestor {
     List<Alimentación> alimentacións = new ArrayList<>();
     List<Textil> textils = new ArrayList<>();
     List<Electronica> electronics = new ArrayList<>();
-    Alimentación alimentación = new Alimentación();
-    Textil textil = new Textil();
-    Electronica electronica = new Electronica();
+    List<Carro> carros = new ArrayList <>();
+
+
+
 
 
     public void intoducirtextil(){
 
-
+        Textil textil = new Textil();
         System.out.println("Introduce el nombre");
         textil.setnom(scanner.nextLine());
         System.out.println("Introduce el precio");
@@ -33,6 +34,7 @@ public class Gestor {
 
     public void intoducirElectronica(){
 
+        Electronica electronica = new Electronica();
         System.out.println("Introduce el nombre");
         electronica.setnom(scanner.nextLine());
         System.out.println("Introduce el precio");
@@ -48,6 +50,8 @@ public class Gestor {
     }
 
     public void insertarAlimentacion(){
+
+        Alimentación alimentación = new Alimentación();
         System.out.println("Introduce el nombre");
         alimentación.setnom(scanner.nextLine());
         System.out.println("Introduce el precio");
@@ -68,4 +72,55 @@ public class Gestor {
         scanner.nextLine();
         alimentacións.add(alimentación);
     }
+
+    public void mostrarCarro(){
+
+        boolean primero = true;
+        for (int i = 0; i <textils.size() ; i++) {
+            Carro tx = new Carro();
+            tx.nom = textils.get(i).nom;
+            tx.codi_barres = textils.get(i).codi_barres;
+            if (!primero) {
+                boolean existe = false;
+                for (int j = 0; j <carros.size(); j++) {
+                    System.out.println(carros.get(i).nom);
+                    if (carros.get(i).nom.equals(tx.nom)){
+                        carros.get(i).total ++;
+                        existe = true;
+                    }
+                }
+                if (!existe){
+                    tx.total ++;
+                    carros.add(tx);
+                }
+
+            }
+            else{
+                tx.total ++;
+                carros.add(tx);
+                primero = false;
+            }
+
+        }
+        for (int i = 0; i <alimentacións.size() ; i++) {
+            Carro al = new Carro();
+            al.nom = textils.get(i).nom;
+            al.codi_barres = textils.get(i).codi_barres;
+            carros.add(al);
+        }
+        for (int i = 0; i <electronics.size() ; i++) {
+            Carro el = new Carro();
+            el.nom = textils.get(i).nom;
+            el.codi_barres = textils.get(i).codi_barres;
+            carros.add(el);
+        }
+
+
+        for (int i = 0; i <carros.size() ; i++) {
+            System.out.println(carros.get(i).nom);
+            System.out.println(carros.get(i).codi_barres);
+            System.out.println(carros.get(i).total);
+        }
+    }
+
 }

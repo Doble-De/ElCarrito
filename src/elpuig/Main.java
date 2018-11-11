@@ -46,7 +46,7 @@ public class Main {
                     //Pasar Por caja
                     break;
                 case 3:
-                    //Mostrar carro
+                    gestor.mostrarCarro();
                     break;
             }
         }

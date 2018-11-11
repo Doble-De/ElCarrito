@@ -34,4 +34,5 @@ public class Textil extends Productos {
     public void setcodi (int codi) {
         this.codi_barres = codi;
     }
+
 }
