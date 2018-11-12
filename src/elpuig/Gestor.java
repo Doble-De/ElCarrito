@@ -136,11 +136,12 @@ public class Gestor {
         for (int i = 0; i <electronics.size() ; i++) {
             Carro el = new Carro();
             el.nom = electronics.get(i).nom;
+            el.preu = electronics.get(i).preu;
             el.codi_barres = electronics.get(i).codi_barres;
             if (!primero) {
                 boolean existe = false;
                 for (int j = 0; j <carros.size(); j++) {
-                    if (carros.get(j).nom.equals(el.nom) && carros.get(j).codi_barres == el.codi_barres){
+                    if (carros.get(j).preu == el.preu && carros.get(j).codi_barres == el.codi_barres){
                         carros.get(j).total ++;
                         existe = true;
                     }
@@ -163,6 +164,7 @@ public class Gestor {
         for (int i = 0; i <carros.size() ; i++) {
             System.out.println(carros.get(i).nom);
             System.out.println(carros.get(i).codi_barres);
+            System.out.println(carros.get(i).preu);
             System.out.println(carros.get(i).total);
         }
     }
