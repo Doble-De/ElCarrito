@@ -180,6 +180,7 @@ public class Gestor {
         }
         System.out.println("Total "+precio_total);
         carros.clear();
+
     }
 
     public void mostrarCarro(){
