@@ -43,7 +43,7 @@ public class Main {
                         }
                     }
                 case 2:
-                    //Pasar Por caja
+                    //gestor.generartiquet();
                     break;
                 case 3:
                     gestor.mostrarCarro();
