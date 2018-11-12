@@ -86,6 +86,7 @@ public class Gestor {
                 for (int j = 0; j <carros.size(); j++) {
                     if (carros.get(j).preu == tx.preu && carros.get(j).codi_barres == tx.codi_barres){
                         carros.get(j).total ++;
+
                         existe = true;
                     }
                 }
@@ -160,13 +161,25 @@ public class Gestor {
 
         }
 
+        int precio_total=0;
 
         for (int i = 0; i <carros.size() ; i++) {
-            System.out.println(carros.get(i).nom);
-            System.out.println(carros.get(i).codi_barres);
-            System.out.println(carros.get(i).preu);
+            if (carros.get(i).total>1){
+                precio_total += (carros.get(i).preu * carros.get(i).total);
+            }
+            else {
+                precio_total += carros.get(i).preu;
+            }
+        }
+
+        for (int i = 0; i <carros.size() ; i++) {
+            System.out.print(carros.get(i).nom+"      ");
+            System.out.print(carros.get(i).codi_barres+"      ");
+            System.out.print(carros.get(i).preu+"       ");
             System.out.println(carros.get(i).total);
         }
+        System.out.println("Total "+precio_total);
+        carros.clear();
     }
 
     public void mostrarCarro(){
