@@ -73,6 +73,100 @@ public class Gestor {
         alimentacións.add(alimentación);
     }
 
+    public void generartiquet(){
+
+        boolean primero = true;
+        for (int i = 0; i <textils.size() ; i++) {
+            Carro tx = new Carro();
+            tx.nom = textils.get(i).nom;
+            tx.preu = textils.get(i).preu;
+            tx.codi_barres = textils.get(i).codi_barres;
+            if (!primero) {
+                boolean existe = false;
+                for (int j = 0; j <carros.size(); j++) {
+                    if (carros.get(j).preu == tx.preu && carros.get(j).codi_barres == tx.codi_barres){
+                        carros.get(j).total ++;
+                        existe = true;
+                    }
+                }
+                if (!existe){
+                    tx.total ++;
+                    carros.add(tx);
+                }
+
+            }
+            else{
+                tx.total ++;
+                carros.add(tx);
+                primero = false;
+            }
+
+        }
+
+        primero = true;
+        for (int i = 0; i <alimentacións.size() ; i++) {
+            Carro al = new Carro();
+            al.nom = alimentacións.get(i).nom;
+            al.preu = alimentacións.get(i).preu;
+            al.codi_barres = alimentacións.get(i).codi_barres;
+            if (!primero) {
+                boolean existe = false;
+                for (int j = 0; j <carros.size(); j++) {
+                    if (carros.get(j).preu == al.preu && carros.get(j).codi_barres == al.codi_barres){
+                        carros.get(j).total ++;
+                        existe = true;
+                    }
+                }
+                if (!existe){
+                    al.total ++;
+                    carros.add(al);
+                }
+
+            }
+            else{
+                al.total ++;
+                carros.add(al);
+                primero = false;
+            }
+
+        }
+
+
+        primero = true;
+        for (int i = 0; i <electronics.size() ; i++) {
+            Carro el = new Carro();
+            el.nom = electronics.get(i).nom;
+            el.codi_barres = electronics.get(i).codi_barres;
+            if (!primero) {
+                boolean existe = false;
+                for (int j = 0; j <carros.size(); j++) {
+                    if (carros.get(j).nom.equals(el.nom) && carros.get(j).codi_barres == el.codi_barres){
+                        carros.get(j).total ++;
+                        existe = true;
+                    }
+                }
+                if (!existe){
+                    el.total ++;
+                    carros.add(el);
+                }
+
+            }
+            else{
+                el.total ++;
+                carros.add(el);
+                primero = false;
+            }
+
+        }
+
+
+        for (int i = 0; i <carros.size() ; i++) {
+            System.out.println(carros.get(i).nom);
+            System.out.println(carros.get(i).codi_barres);
+            System.out.println(carros.get(i).total);
+        }
+    }
+
     public void mostrarCarro(){
 
         boolean primero = true;
