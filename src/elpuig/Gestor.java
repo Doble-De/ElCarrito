@@ -167,7 +167,7 @@ public class Gestor {
                     precio_unitario += carros.get(i).preu;
                 }
 
-                System.out.print("*");System.out.print(String.format("%-40s", " "+carros.get(i).nom+"      "+ carros.get(i).total +"      "+df.format(carros.get(i).preu)+"      "+ df.format(precio_unitario)));System.out.println("*");
+                System.out.print("*");System.out.print(String.format("%-40s", " "+carros.get(i).nom+String.format("%-10s",carros.get(i).total) +String.format("%-10s",df.format(carros.get(i).preu))+String.format("%-10s",df.format(precio_unitario))));System.out.println("*");
                 precio_total += precio_unitario;
                 precio_unitario = 0;
             }
