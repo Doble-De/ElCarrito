@@ -2,13 +2,16 @@ package elpuig;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 public class Alimentación extends Productos {
 
-    private LocalDate Data;
+    public LocalDate Data;
 
     private int dia;
     private int mes;
@@ -72,21 +75,20 @@ public class Alimentación extends Productos {
     }
 
 
-    public Period getDiasRestantes() {
+    public int getDiasRestantes() {
         LocalDate startDateInclusive = LocalDate.now();
         LocalDate lastDateInclusive = LocalDate.of(getAño(), getMes(), getDia());
 
-        Period periodo = Period.between(startDateInclusive, lastDateInclusive);
-        periodo.getYears();
-        periodo.getMonths();
-        periodo.getDays();
-        return periodo;
+        int dias = (int) ChronoUnit.DAYS.between(startDateInclusive, lastDateInclusive);
+        return dias;
     }
 
-        public double PrecioFinalA(Period periodo){
 
-            double preciofinal = getpreu() - getpreu() * (1 / (periodo.getDays() + 1)) + (getpreu() * 0.1);
+        public double PrecioFinalA(int periodo){
 
+
+            double temp=getpreu();
+            double preciofinal = temp - temp * ((double)1 / (periodo + 1)) + (temp * 0.1);
             return preciofinal;
 
         }

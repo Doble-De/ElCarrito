@@ -50,7 +50,7 @@ public class EditText {
         return valor;
     }
 
-    public double altura(String hint) {
+    public double numdec(String hint) {
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
         boolean esValido;
