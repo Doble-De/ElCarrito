@@ -88,7 +88,7 @@ public class Alimentación extends Productos {
 
 
             double temp=getpreu();
-            double preciofinal = temp - temp * ((double)1 / (periodo + 1)) + (temp * 0.1);
+            double preciofinal = temp - temp * ((double)1 / (periodo + 1.0)) + (temp * 0.1);
             return preciofinal;
 
         }
